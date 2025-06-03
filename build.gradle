@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'org.example'
+version = '1.0'
+// Pastikan ini sesuai dengan versi JDK Anda, misal '21' jika Anda pakai JDK 21
+// Berdasarkan eror, sepertinya Anda menggunakan JDK 21 untuk menjalankan.
+sourceCompatibility = '21'
+// Jika Anda menambahkan targetCompatibility, pastikan sama
+// targetCompatibility = '21'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.apache.pdfbox:pdfbox:2.0.27'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.2'
+}
+
+application {
+    mainClass = 'app.MainApp'
+    // BARIS INI SANGAT PENTING UNTUK TASK :run
+    applicationDefaultJvmArgs = ['--enable-preview']
+}
+
+// Baris ini untuk mengaktifkan fitur pratinjau saat kompilasi (task :compileJava)
+tasks.withType(JavaCompile) {
+    options.compilerArgs += '--enable-preview'
+}
