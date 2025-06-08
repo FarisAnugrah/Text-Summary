@@ -13,10 +13,10 @@ import com.fasterxml.jackson.databind.JsonNode;
 
 public class ApiBasedSummarizer implements Summarizer {
 
-    private static final String API_URL = "https://api-inference.huggingface.co/models/facebook/bart-large-cnn";
+    private static final String API_URL = "https://api-inference.huggingface.co/models/cahya/t5-base-indonesian-summarization-cased";
     // Sebaiknya gunakan environment variable untuk token seperti diskusi kita sebelumnya
     // Tapi jika Anda memilih hardcode untuk saat ini, pastikan tokennya benar.
-    private static final String API_TOKEN_AUTHORIZATION_HEADER = "Bearer " + System.getenv("HUGGINGFACE_TOKEN"); // Pastikan ini token yang valid
+    private static final String API_TOKEN_AUTHORIZATION_HEADER = "Bearer"; + System.getenv("HUGGINGFACE_TOKEN"); // Pastikan ini token yang valid
 
     @Override
     // Ubah signature metode untuk menyertakan SummaryType
